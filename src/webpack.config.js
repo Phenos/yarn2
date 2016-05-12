@@ -16,6 +16,20 @@ module.exports = {
         query: {
             presets: ['es2015', 'react']
         }
-    }
+    },
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            },
+            output: {
+                comments: false
+            },
+            sourceMap: true
+        }),
+        new webpack.SourceMapDevToolPlugin({
+            filename: '[name].js.map'
+        })
+    ]
 };
 
