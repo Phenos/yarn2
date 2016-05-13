@@ -6,8 +6,6 @@ import Yarn from './yarn.jsx';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-console.log("Yarn", Yarn);
-
 ReactDOM.render(<Yarn />, document.getElementById('yarn'));
 
 

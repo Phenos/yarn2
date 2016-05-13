@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './js/main.js',
+    entry: './js/main.jsx',
     output: {
         path: __dirname,
         filename: 'bundle.js'
@@ -14,19 +14,19 @@ module.exports = {
             loader: 'babel'
         }],
         query: {
-            presets: ['es2015', 'react']
+            presets: ['es2016', 'react', 'stage-0']
         }
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
-            output: {
-                comments: false
-            },
-            sourceMap: true
-        }),
+//        new webpack.optimize.UglifyJsPlugin({
+//            compress: {
+//                warnings: false
+//            },
+//            output: {
+//                comments: false
+//            },
+//            sourceMap: true
+//        }),
         new webpack.SourceMapDevToolPlugin({
             filename: '[name].js.map'
         })
