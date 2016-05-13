@@ -3,17 +3,25 @@ import Test from './test.jsx';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+/* Inject the Material UI theme provider */
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+import RaisedButton from 'material-ui/RaisedButton';
+
 class Yarn extends React.Component {
     render() {
-        return <div style={ styles.base }>
-            <h1>Welcome { this.props.name }!</h1>
-            <button onClick={ this.onClick }>CLICK!</button>
-            <Test></Test>
-        </div>
+        return <MuiThemeProvider muiTheme={getMuiTheme()}>
+            <div style={ styles.base }>
+                <h1>Welcome { this.props.name }!</h1>
+                <RaisedButton label="CLICK!!!" onClick={ this.onClick } />
+                <Test></Test>
+            </div>
+        </MuiThemeProvider>
     }
 
     onClick() {
-        console.log("CLICK!");
+        console.log("CLICK!!!");
     }
 }
 
@@ -23,8 +31,7 @@ var styles = {
         height: "100%",
         width: "100%",
         padding: "10px",
-        margin: "0px",
-        background: "#f0f0f0"
+        margin: "0px"
     }
 };
 
