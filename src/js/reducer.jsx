@@ -1,23 +1,33 @@
-import { LAYOUT_OPEN_MENU, LAYOUT_CLOSE_MENU, LAYOUT_TOGGLE_MENU } from './layout/actions.jsx';
+import {
+    LAYOUT_OPEN_MENU,
+    LAYOUT_CLOSE_MENU,
+    LAYOUT_TOGGLE_MENU } from './layout/actions.jsx';
 
-import { List, Map, fromJS } from 'immutable';
-
-const initialSate = fromJS({
+const initialSate = {
     layout: {
         menu: {
             isOpen: false
         }
     }
-});
+};
 
 export default function reducer(state = initialSate, action) {
+    /* Create a new copy of the store state */
+    var newState = Object.assign({}, state);
+
+    /* Create a few shortcuts for deep objects */
+    var menu = state.layout.menu;
+
     switch (action.type) {
         case LAYOUT_OPEN_MENU:
-            return state.updateIn(['layout', 'menu', "isOpen"], value => true);
+            menu.isOpen = true;
+            return newState;
         case LAYOUT_CLOSE_MENU:
-            return state.updateIn(['layout', 'menu', "isOpen"], value => false);
+            menu.isOpen = false;
+            return newState;
         case LAYOUT_TOGGLE_MENU:
-            return state.updateIn(['layout', 'menu', "isOpen"], value => !value);
+            menu.isOpen = !menu.isOpen;
+            return newState;
         default:
             return state;
 

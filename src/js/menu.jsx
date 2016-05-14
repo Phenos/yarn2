@@ -1,48 +1,21 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 
-class Menu extends React.Component {
-    constructor(props) {
-        super(props);
+const Menu = ({isOpen, onClose}) => (
+    <Drawer
+        docked={ false }
+        width={ 200 }
+        open={ isOpen }
+    >
+        <h1>Menu</h1>
+        <MenuItem onTouchTap={ onClose }>CLOSE</MenuItem>
+    </Drawer>
+);
 
-        this.state = {
-            open: true
-        };
-
-    }
-
-    handleClose = () => {
-        this.setState({
-            open: false
-        });
-    };
-
-    handleToggle = () => {
-        this.setState({
-            open: !this.state.open
-        });
-    };
-
-    render() {
-
-        return (
-            <Drawer
-                docked={ false }
-                width={ 200 }
-                open={ this.state.open }
-            >
-                <div>
-                    <a onTouchTap={ this.handleClose }>ABC</a>
-                </div>
-                <div>
-                    <a onClick={ this.handleClose }>DEF</a>
-                </div>
-                <MenuItem onTouchTap={ this.handleClose }>Yeah!</MenuItem>
-            </Drawer>
-        )
-    }
-
-}
+Menu.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired
+};
 
 export default Menu;
