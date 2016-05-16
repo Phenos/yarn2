@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { closeMenu } from './layout/actions.jsx';
+import { closeMenu } from '../store/layout/actions.jsx';
 import Menu from './menu.jsx';
 
 const mapStateToProps = (state) => {

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Toolbar from './toolbar.jsx';
-import { openMenu } from './layout/actions.jsx';
+import { openMenu } from '../store/layout/actions.jsx';
 
 const mapStateToProps = (state) => {
     return {

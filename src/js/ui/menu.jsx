@@ -4,12 +4,13 @@ import MenuItem from 'material-ui/MenuItem';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import i18n from '../config/i18n.js';
 
 const Menu = function ({isOpen, onClose}) {
 
     const MenuAppBar = () => (
         <AppBar
-            title='Menu'
+            title={ i18n.UI_MENU_TITLE }
             iconElementLeft={ <IconButton onTouchTap={ onClose }><NavigationClose /></IconButton> }
         />
     );
@@ -20,7 +21,7 @@ const Menu = function ({isOpen, onClose}) {
         open={ isOpen }
     >
         <MenuAppBar />
-        <MenuItem onTouchTap={ onClose }>Login </MenuItem>
+        <MenuItem onTouchTap={ onClose }>{ i18n.UI_MENU_LOGIN }</MenuItem>
     </Drawer>
 };
 
