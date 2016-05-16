@@ -6,12 +6,9 @@ Bootstrap for the app
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import store from './store/store.jsx';
+import store from './services/store.jsx';
 import { Provider } from 'react-redux';
-import firebase from './services/firebase.jsx';
-import Yarn from './ui/yarn.jsx';
-
-
+import Yarn from './containers/yarn.jsx';
 
 
 /* Necessary for the Material-UI library */
@@ -23,6 +20,5 @@ const mainTemplate = (
         <Yarn />
     </Provider>
 );
-
 
 ReactDOM.render(mainTemplate, document.getElementById('yarn'));

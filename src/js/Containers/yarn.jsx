@@ -7,8 +7,9 @@ import ReactDOM from 'react-dom';
 /* Inject the Material UI theme provider */
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
 import RaisedButton from 'material-ui/RaisedButton';
+
+import auth from '../services/auth.jsx';
 
 class Yarn extends React.Component {
 
@@ -16,7 +17,7 @@ class Yarn extends React.Component {
         return <MuiThemeProvider muiTheme={ getMuiTheme() }>
             <div style={ styles.base }>
                 <MainToolbar />
-                <MainMenu />
+                <MainMenu auth={ auth } />
             </div>
         </MuiThemeProvider>
     }

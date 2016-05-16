@@ -2,7 +2,7 @@ export const LAYOUT_OPEN_MENU = 'LAYOUT_OPEN_MENU';
 export const LAYOUT_CLOSE_MENU = 'LAYOUT_CLOSE_MENU';
 export const LAYOUT_TOGGLE_MENU = 'LAYOUT_TOGGLE_MENU';
 
-import store from '../store.jsx';
+import store from '../services/store.jsx';
 
 export function openMenu() {
     return {

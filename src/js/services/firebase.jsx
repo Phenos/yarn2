@@ -1,17 +1,8 @@
-import config from '../config/config.js';
+import config from '../config/config.jsx';
 import Firebase from 'Firebase';
 
 let firebase = new Firebase(config.firebase.url);
 
-firebase.authWithOAuthPopup("twitter", function(error, authData) {
-    if (error) {
-        console.log("Login failed", error);
-    } else {
-        console.log("Authenticated successfully with payload:", authData);
-    }
-});
-
-console.log("firebase", firebase);
 /*
 todo: add auth with firebase
 

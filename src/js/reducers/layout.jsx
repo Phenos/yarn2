@@ -1,13 +1,11 @@
 import {
     LAYOUT_OPEN_MENU,
     LAYOUT_CLOSE_MENU,
-    LAYOUT_TOGGLE_MENU } from './layout/actions.jsx';
+    LAYOUT_TOGGLE_MENU } from '../actions/layout.jsx';
 
 const initialSate = {
-    layout: {
-        menu: {
-            isOpen: false
-        }
+    menu: {
+        isOpen: false
     }
 };
 
@@ -16,7 +14,7 @@ export default function reducer(state = initialSate, action) {
     var newState = Object.assign({}, state);
 
     /* Create a few shortcuts for deep objects */
-    var menu = state.layout.menu;
+    var menu = newState.menu;
 
     switch (action.type) {
         case LAYOUT_OPEN_MENU:
