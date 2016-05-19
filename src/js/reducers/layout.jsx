@@ -1,3 +1,5 @@
+import update from 'react/lib/update';
+
 import {
     LAYOUT_OPEN_MENU,
     LAYOUT_CLOSE_MENU,
@@ -10,22 +12,19 @@ const initialSate = {
 };
 
 export default function reducer(state = initialSate, action) {
-    /* Create a new copy of the store state */
-    var newState = Object.assign({}, state);
-
-    /* Create a few shortcuts for deep objects */
-    var menu = newState.menu;
-
     switch (action.type) {
         case LAYOUT_OPEN_MENU:
-            menu.isOpen = true;
-            return newState;
+            return update(state, {
+                menu: { isOpen : { $set: true }}
+            });
         case LAYOUT_CLOSE_MENU:
-            menu.isOpen = false;
-            return newState;
+            return update(state, {
+                menu: { isOpen : { $set: false }}
+            });
         case LAYOUT_TOGGLE_MENU:
-            menu.isOpen = !menu.isOpen;
-            return newState;
+            return update(state, {
+                menu: { isOpen : { $set: state.menu.isOpen }}
+            });
         default:
             return state;
 

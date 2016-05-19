@@ -4,7 +4,7 @@ import MenuItem from 'material-ui/MenuItem';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import i18n from '../config/i18n.js';
+import i18n from '../config/i18n.jsx';
 
 const Menu = function ({ onLogout, onLogin, isOpen, onClose, profile }) {
 
@@ -51,7 +51,7 @@ Menu.propTypes = {
     onClose: PropTypes.func.isRequired,
     onLogin: PropTypes.func.isRequired,
     onLogout: PropTypes.func.isRequired,
-    profile: PropTypes.object.isRequired
+    profile: PropTypes.object
 };
 
 export default Menu;

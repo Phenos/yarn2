@@ -2,20 +2,17 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './js/main.jsx',
+    entry: './src/js/main.jsx',
     output: {
         path: __dirname,
         filename: 'bundle.js'
     },
     module: {
         loaders: [{
-            test: /\.jsx?$/,
+            test: /\.jsx$/,
             exclude: /node_modules/,
             loader: 'babel'
-        }],
-        query: {
-            presets: ['es2016', 'react', 'stage-0']
-        }
+        }]
     },
     plugins: [
 //        new webpack.optimize.UglifyJsPlugin({
