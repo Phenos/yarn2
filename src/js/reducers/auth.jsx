@@ -1,3 +1,5 @@
+import update from 'react/lib/update';
+
 import {
     AUTH_SET_PROFILE,
     AUTH_LOGIN,
@@ -10,26 +12,22 @@ const initialSate = {
 };
 
 export default function reducer(state = initialSate, action) {
-    /* Create a new copy of the store state */
-    let newState = null;
 
     switch (action.type) {
         case AUTH_SET_PROFILE:
-            state.authenticating = false;
-            newState = Object.assign({}, state);
-            newState.profile = action.profile;
-            return newState;
-
+            return update(state, {
+                authenticating: { $set: false },
+                profile: { $set: action.profile }
+            });
         case AUTH_LOGIN:
-            state.authenticating = true;
-            return state;
-
+            return update(state, {
+                authenticating: { $set: true }
+            });
         case AUTH_LOGOUT:
-            state.authenticating = false;
-            newState = Object.assign({}, state);
-            newState.profile = null;
-            return newState;
-
+            return update(state, {
+                authenticating: { $set: false },
+                profile: { $set: null }
+            });
         default:
             return state;
 
