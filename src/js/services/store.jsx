@@ -13,16 +13,16 @@ const logger = createLogger(config.logging.actions);
 const devToolsExtension = window.devToolsExtension ? window.devToolsExtension() : f => f;
 
 const enhancer = compose(
-    DevTools.instrument(),
-//    autoRehydrate(),
+//    DevTools.instrument(),
+    autoRehydrate(),
     applyMiddleware(thunk),
-    applyMiddleware(logger)
-//    devToolsExtension
+    applyMiddleware(logger),
+    devToolsExtension
 );
 
 const store = createStore(reducer, {}, enhancer);
 
 // Add local storage persistance to the store
-//persistStore(store);
+persistStore(store);
 
 export default store;
