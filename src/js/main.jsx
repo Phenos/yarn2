@@ -9,6 +9,7 @@ import ReactDOM from 'react-dom';
 import store from './services/store.jsx';
 import { Provider } from 'react-redux';
 import Yarn from './containers/yarn.jsx';
+import css from './main.css'
 
 /* Necessary for the Material-UI library */
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -20,4 +21,5 @@ const mainTemplate = (
     </Provider>
 );
 
-ReactDOM.render(mainTemplate, document.getElementById('yarn'));
+var root = document.createElement('div');
+ReactDOM.render(mainTemplate, document.body.appendChild(root));

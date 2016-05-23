@@ -13,17 +13,16 @@
     "firebase": "^2.4.2",
     "immutable": "^3.8.1",
     "material-ui": "^0.15.0",
+    "normalize.css": "^4.1.1",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-redux": "^4.4.5",
     "react-tap-event-plugin": "^1.0.0",
     "reactfire": "^0.7.0",
     "redux": "^3.5.2",
-    "redux-devtools": "^3.3.1",
     "redux-logger": "^2.6.1",
     "redux-persist": "^3.1.1",
     "redux-thunk": "^2.1.0",
-    "webpack": "^1.13.0",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
@@ -33,14 +32,13 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "bell-on-bundler-error-plugin": "^1.0.8",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.17.0",
     "radium": "0.17.0",
-    "redux-devtools": "^3.3.1",
-    "redux-devtools-diff-monitor": "^5.0.5",
-    "redux-devtools-dock-monitor": "^1.1.1",
-    "redux-devtools-log-monitor": "^1.0.11",
-    "redux-slider-monitor": "^1.0.5",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.0",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "webpack-vendor-chunk-plugin": "^1.0.0"
   }
 }

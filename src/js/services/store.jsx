@@ -3,7 +3,6 @@ import { createStore, compose, applyMiddleware } from 'redux';
 
 import config from '../config/config.jsx';
 import reducer from '../reducers/reducer.jsx';
-import DevTools from '../containers/devTools.jsx';
 
 /* Middlewares */
 import thunk from 'redux-thunk';
@@ -13,7 +12,6 @@ const logger = createLogger(config.logging.actions);
 const devToolsExtension = window.devToolsExtension ? window.devToolsExtension() : f => f;
 
 const enhancer = compose(
-//    DevTools.instrument(),
     autoRehydrate(),
     applyMiddleware(thunk),
     applyMiddleware(logger),
